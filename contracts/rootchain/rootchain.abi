@@ -1,0 +1,293 @@
+[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "headerBlocks",
+		"outputs": [
+			{
+				"name": "root",
+				"type": "bytes32"
+			},
+			{
+				"name": "start",
+				"type": "uint256"
+			},
+			{
+				"name": "end",
+				"type": "uint256"
+			},
+			{
+				"name": "createdAt",
+				"type": "uint256"
+			},
+			{
+				"name": "proposer",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "data",
+				"type": "bytes"
+			},
+			{
+				"name": "sigs",
+				"type": "uint256[3][]"
+			}
+		],
+		"name": "submitCheckpoint",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "data",
+				"type": "bytes"
+			},
+			{
+				"name": "sigs",
+				"type": "bytes"
+			}
+		],
+		"name": "submitHeaderBlock",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getLastChildBlock",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "currentHeaderBlock",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "proposer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "headerBlockId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"name": "reward",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "start",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "end",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "root",
+				"type": "bytes32"
+			}
+		],
+		"name": "NewHeaderBlock",
+		"type": "event"
+	},
+	{
+    	"anonymous": false,
+    	"inputs": [
+    		{
+    			"indexed": true,
+    			"internalType": "uint256",
+    			"name": "rootChainId",
+    			"type": "uint256"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "uint256",
+    			"name": "activationHeight",
+    			"type": "uint256"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "uint256",
+    			"name": "txConfirmations",
+    			"type": "uint256"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "address",
+    			"name": "rootChainAddress",
+    			"type": "address"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "address",
+    			"name": "stateSenderAddress",
+    			"type": "address"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "address",
+    			"name": "stakingManagerAddress",
+    			"type": "address"
+    		},
+    		{
+    			"indexed": false,
+    			"internalType": "address",
+    			"name": "stakingInfoAddress",
+    			"type": "address"
+    		}
+    	],
+    	"name": "NewChain",
+    	"type": "event"
+    },
+    {
+    	"constant": true,
+    	"inputs": [
+    		{
+    			"internalType": "uint256",
+    			"name": "",
+    			"type": "uint256"
+    		}
+    	],
+    	"name": "chainMap",
+    	"outputs": [
+    		{
+    			"internalType": "uint256",
+    			"name": "rootChainId",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "activationHeight",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "txConfirmations",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "rootChainAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stateSenderAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stakingManagerAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stakingInfoAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "timeStamp",
+    			"type": "uint256"
+    		}
+    	],
+    	"payable": false,
+    	"stateMutability": "view",
+    	"type": "function"
+    },
+    {
+    	"constant": false,
+    	"inputs": [
+    		{
+    			"internalType": "uint256",
+    			"name": "rootChainId",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "activationHeight",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "txConfirmations",
+    			"type": "uint256"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "rootChainAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stateSenderAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stakingManagerAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "address",
+    			"name": "stakingInfoAddress",
+    			"type": "address"
+    		},
+    		{
+    			"internalType": "uint256",
+    			"name": "timeStamp",
+    			"type": "uint256"
+    		}
+    	],
+    	"name": "setChainInfo",
+    	"outputs": [],
+    	"payable": false,
+    	"stateMutability": "nonpayable",
+    	"type": "function"
+    }
+]
